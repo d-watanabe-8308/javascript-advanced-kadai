@@ -15,6 +15,8 @@ const count = document.getElementById('count');
 
 //課題で追記した部分。htmlからscoreを取得する。
 const scoreCountField = document.getElementById('score');
+//課題で追記した部分。htmlからtimeoutを取得する。
+const timeout = document.getElementById('timeout');
 
 // 複数のテキストを格納する配列
 const textLists = [
@@ -147,6 +149,12 @@ const timer = () => {
       }
     }, 1000);
   };
+
+//課題。カウントダウンがゼロになったら、タイムアップ！と表記するようにする。
+setTimeout(() => {
+    untypedfield.textContent = '';
+    timeout.textContent = 'タイムアップ';
+  }, 61750);
 
 // ゲームスタート時の処理
 start.addEventListener('click', () => {
