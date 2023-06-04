@@ -3,12 +3,18 @@ let untyped = '';
 let typed = '';
 let score = 0;
 
+//課題で追記した部分。scorecountを0に戻す。
+let scorecount = 0;
+
 //htmlの要素を取得する。
 const untypedfield = document.getElementById('untyped');
 const typedfield = document.getElementById('typed');
 const wrap = document.getElementById('wrap');
 const start = document.getElementById('start');
 const count = document.getElementById('count');
+
+//課題で追記した部分。htmlからscoreを取得する。
+const scoreCountField = document.getElementById('score');
 
 // 複数のテキストを格納する配列
 const textLists = [
@@ -81,6 +87,9 @@ const keyPress = e => {
     untyped = untyped.substring(1);
     typedfield.textContent = typed;
     untypedfield.textContent = untyped;
+
+    //課題で追記した部分。scoreを表記する。
+    scoreCountField.textContent = score;
     
     if(untyped === '') {
     createText();
